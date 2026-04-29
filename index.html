@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator - DevCalc</title>
+    <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" type="image/x-icon" href="images/favicon.png" />
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">DevCalc</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link active" href="index.html">Calculator</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    </ul>
+                    <div class="d-flex align-items-center gap-3">
+                        <a href="login.html" class="text-light text-decoration-none">Login</a>
+                        <a href="register.html" class="btn btn-light btn-sm fw-bold text-primary">Sign Up</a>
+                        <a href="profile.html">
+                            <img src="images/avatar.png" alt="Profile" class="rounded-circle"
+                                style="width: 35px; height: 35px; object-fit: cover; background-color: white;">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="flex-grow-1 d-flex align-items-center py-5">
+        <div class="container d-flex justify-content-center">
+            <div class="card shadow border-0 rounded-4 w-100" style="max-width: 380px;">
+                <div class="card-body p-4">
+                    <h3 class="mb-4 fw-bold text-center">Calculator</h3>
+
+                    <div class="d-flex justify-content-center mb-3">
+                        <div class="btn-group w-100" role="group">
+                            <input type="radio" class="btn-check" name="calcMode" id="stdMode" checked>
+                            <label class="btn btn-outline-primary" for="stdMode">Standard</label>
+
+                            <input type="radio" class="btn-check" name="calcMode" id="progMode" disabled>
+                            <label class="btn btn-outline-primary" for="progMode">Programmer</label>
+                        </div>
+                    </div>
+
+                    <div class="calc-display border mb-4">
+                        <div class="text-muted" style="font-size: 1.1rem; min-height: 24px;">1024 + 512</div>
+                        <div class="fw-bold text-dark" style="font-size: 2.5rem; line-height: 1.2;">1536</div>
+                    </div>
+
+                    <div class="row g-2">
+                        <div class="col-3"><button class="btn btn-danger w-100 calc-btn">C</button></div>
+                        <div class="col-3"><button class="btn btn-warning text-dark w-100 calc-btn">CE</button></div>
+                        <div class="col-3"><button class="btn btn-secondary w-100 calc-btn">%</button></div>
+                        <div class="col-3"><button class="btn btn-primary w-100 calc-btn">/</button></div>
+
+                        <div class="col-3"><button class="btn btn-light border w-100 calc-btn">7</button></div>
+                        <div class="col-3"><button class="btn btn-light border w-100 calc-btn">8</button></div>
+                        <div class="col-3"><button class="btn btn-light border w-100 calc-btn">9</button></div>
+                        <div class="col-3"><button class="btn btn-primary w-100 calc-btn">*</button></div>
+
+                        <div class="col-3"><button class="btn btn-light border w-100 calc-btn">4</button></div>
+                        <div class="col-3"><button class="btn btn-light border w-100 calc-btn">5</button></div>
+                        <div class="col-3"><button class="btn btn-light border w-100 calc-btn">6</button></div>
+                        <div class="col-3"><button class="btn btn-primary w-100 calc-btn">-</button></div>
+
+                        <div class="col-3"><button class="btn btn-light border w-100 calc-btn">1</button></div>
+                        <div class="col-3"><button class="btn btn-light border w-100 calc-btn">2</button></div>
+                        <div class="col-3"><button class="btn btn-light border w-100 calc-btn">3</button></div>
+                        <div class="col-3"><button class="btn btn-primary w-100 calc-btn">+</button></div>
+
+                        <div class="col-6"><button class="btn btn-light border w-100 calc-btn">0</button></div>
+                        <div class="col-3"><button class="btn btn-light border w-100 calc-btn">.</button></div>
+                        <div class="col-3"><button class="btn btn-success w-100 calc-btn">=</button></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-primary py-4 mt-auto text-white-50">
+        <div class="container text-center text-md-start">
+            <div class="row align-items-center">
+                <div class="col-md-4 mb-3 mb-md-0">
+                    <h5 class="text-white fw-bold">DevCalc &copy; 2026</h5>
+                    <small>Educational Web Design Project</small>
+                </div>
+                <div class="col-md-4 mb-3 mb-md-0 text-center">
+                    <strong class="text-white">Privacy Note:</strong><br>
+                    <small>This is an educational prototype. No real personal data is stored or processed.</small>
+                </div>
+                <div class="col-md-4 text-md-end">
+                    <p class="mb-0 text-white">Designed for KPI Laboratory Work</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
