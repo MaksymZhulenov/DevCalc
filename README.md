@@ -50,4 +50,4 @@ This is a non-commercial academic project. All form inputs are used for UI demon
 
 ## Project Links
 * Live Demo (GitHub Pages): [GitHub Pages](https://maksymzhulenov.github.io/DevCalc/)
-* Lab Report (Google Drive): [Google Drive](https://docs.google.com/document/d/1J55xJEU-TI0NhD9RmuVmWgFxcJoCadTk4dETiFkegNE/edit?usp=sharing)
+* Lab Report (Google Drive): [Google Drive](https://docs.google.com/document/d/1xrCXi5GvkTOqDGTzPV0pQ78jOEuA_THJ/edit?usp=sharing&ouid=100659912054836322794&rtpof=true&sd=true)
