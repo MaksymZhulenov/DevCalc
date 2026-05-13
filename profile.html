@@ -24,8 +24,6 @@
                         <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
                     </ul>
                     <div class="d-flex align-items-center gap-3">
-                        <span class="text-light">Hello, User!</span>
-                        <a href="login.html" class="btn btn-light btn-sm fw-bold text-primary">Log Out</a>
                     </div>
                 </div>
             </div>
@@ -39,58 +37,71 @@
                     <h3 class="mb-4 fw-bold text-center">User Profile</h3>
                     <div class="card shadow-sm border-0">
                         <div class="card-body p-4 p-md-5">
-                            <div class="row align-items-center">
-                                <div class="row align-items-center">
-                                    <div class="row">
 
-                                        <div
-                                            class="col-md-5 d-flex flex-column align-items-center justify-content-center border-end mb-4 mb-md-0 py-3">
-                                            <img src="images/avatar.png" alt="User Avatar"
-                                                class="rounded-circle mb-3 shadow-sm"
-                                                style="width: 170px; height: 170px; object-fit: cover; border: 4px solid #0d6efd; background-color: white;">
-                                            <div>
-                                                <button class="btn btn-sm btn-outline-primary px-3">Change
-                                                    Photo</button>
-                                            </div>
-                                        </div>
+                            <div class="row">
+                                <div
+                                    class="col-md-5 d-flex flex-column align-items-center justify-content-center border-end mb-4 mb-md-0 py-3">
+                                    <img id="profileAvatar" src="images/avatar.png" alt="User Avatar"
+                                        class="rounded-circle mb-3 shadow-sm bg-white"
+                                        style="width: 170px; height: 170px; object-fit: cover; border: 4px solid #0d6efd;">
+                                    <div>
+                                        <button id="btnChangePhoto"
+                                            class="btn btn-sm btn-outline-primary px-3 fw-bold">Change Photo</button>
+                                        <input type="file" id="avatarUpload" accept="image/*" class="d-none">
+                                    </div>
+                                </div>
 
-                                        <div class="col-md-7 ps-md-4">
-                                            <div class="table-responsive">
-                                                <table class="table table-striped table-hover mb-0">
-                                                    <tbody>
-                                                        <tr>
-                                                            <th scope="row" class="w-25 text-muted">Full Name</th>
-                                                            <td class="fw-medium">John Developer</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th scope="row" class="text-muted">Email</th>
-                                                            <td>student@kpi.ua</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th scope="row" class="text-muted">Gender</th>
-                                                            <td>Male</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th scope="row" class="text-muted">Birth Date</th>
-                                                            <td>2005-09-01</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th scope="row" class="text-muted">Status</th>
-                                                            <td><span class="badge bg-success">Active</span></td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                            <div class="mt-4 text-end">
-                                                <button class="btn btn-primary px-4">Edit Profile</button>
-                                            </div>
-                                        </div>
+                                <div class="col-md-7 ps-md-4">
+                                    <div id="profileMessage" class="text-center mb-3 fw-bold"></div>
+
+                                    <div class="table-responsive">
+                                        <table class="table table-hover mb-0">
+                                            <tbody>
+                                                <tr>
+                                                    <th scope="row" class="w-25 text-muted align-middle">Full Name</th>
+                                                    <td><input type="text" id="profName"
+                                                            class="form-control form-control-sm"></td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row" class="text-muted align-middle">Email</th>
+                                                    <td class="align-middle fw-medium" id="profEmail">user@example.com
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row" class="text-muted align-middle">Gender</th>
+                                                    <td>
+                                                        <select id="profGender" class="form-select form-select-sm">
+                                                            <option value="male">Male</option>
+                                                            <option value="female">Female</option>
+                                                            <option value="other">Other</option>
+                                                        </select>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row" class="text-muted align-middle">Birth Date</th>
+                                                    <td><input type="date" id="profDate"
+                                                            class="form-control form-control-sm"></td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row" class="text-muted align-middle">Password</th>
+                                                    <td><input type="text" id="profPass"
+                                                            class="form-control form-control-sm"></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="mt-4 text-end">
+                                        <button id="btnSaveProfile" class="btn btn-primary px-4 fw-bold">Save
+                                            Changes</button>
                                     </div>
                                 </div>
                             </div>
+
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
     </main>
 
     <footer class="bg-primary py-4 mt-auto text-white-50">
@@ -112,6 +123,8 @@
     </footer>
 
     <script src="lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="js/profile.js"></script>
+    <script type="module" src="js/navbar.js"></script>
 </body>
 
 </html>

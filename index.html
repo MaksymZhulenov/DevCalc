@@ -38,52 +38,109 @@
 
     <main class="flex-grow-1 d-flex align-items-center py-5">
         <div class="container d-flex justify-content-center">
-            <div class="card shadow border-0 rounded-4 w-100" style="max-width: 380px;">
+
+            <div id="calculator" class="card shadow border-0 rounded-4 w-100 overflow-hidden"
+                style="max-width: 380px; transition: max-width 0.4s ease-in-out;">
                 <div class="card-body p-4">
                     <h3 class="mb-4 fw-bold text-center">Calculator</h3>
 
                     <div class="d-flex justify-content-center mb-3">
                         <div class="btn-group w-100" role="group">
-                            <input type="radio" class="btn-check" name="calcMode" id="stdMode" checked>
-                            <label class="btn btn-outline-primary" for="stdMode">Standard</label>
+                            <input type="radio" class="btn-check" name="calcMode" id="standard" checked>
+                            <label class="btn btn-outline-primary fw-bold" for="standard">Standard</label>
 
-                            <input type="radio" class="btn-check" name="calcMode" id="progMode" disabled>
-                            <label class="btn btn-outline-primary" for="progMode">Programmer</label>
+                            <input type="radio" class="btn-check" name="calcMode" id="programmer">
+                            <label class="btn btn-outline-primary fw-bold" for="programmer">Programmer</label>
                         </div>
                     </div>
 
-                    <div class="calc-display border mb-4">
-                        <div class="text-muted" style="font-size: 1.1rem; min-height: 24px;">1024 + 512</div>
-                        <div class="fw-bold text-dark" style="font-size: 2.5rem; line-height: 1.2;">1536</div>
+                    <div class="calc-display border bg-light p-3 rounded-3 mb-4">
+                        <div id="prog-bases"
+                            class="d-none d-flex flex-column text-start small mb-2 font-monospace text-primary fw-bold"
+                            style="gap: 2px;">
+                            <div>HEX <span class="text-dark ms-2">0</span></div>
+                            <div>DEC <span class="text-dark ms-2">0</span></div>
+                            <div>OCT <span class="text-dark ms-2">0</span></div>
+                            <div>BIN <span class="text-dark ms-2">0</span></div>
+                        </div>
+
+                        <div class="text-muted text-end small" style="min-height: 20px;"></div>
+                        <div class="fw-bold text-dark text-end h2 mb-0" style="word-break: break-all;">0</div>
                     </div>
 
-                    <div class="row g-2">
-                        <div class="col-3"><button class="btn btn-danger w-100 calc-btn">C</button></div>
-                        <div class="col-3"><button class="btn btn-warning text-dark w-100 calc-btn">CE</button></div>
-                        <div class="col-3"><button class="btn btn-secondary w-100 calc-btn">%</button></div>
-                        <div class="col-3"><button class="btn btn-primary w-100 calc-btn">/</button></div>
+                    <div class="d-flex flex-wrap flex-md-nowrap gap-3 justify-content-center align-items-start">
 
-                        <div class="col-3"><button class="btn btn-light border w-100 calc-btn">7</button></div>
-                        <div class="col-3"><button class="btn btn-light border w-100 calc-btn">8</button></div>
-                        <div class="col-3"><button class="btn btn-light border w-100 calc-btn">9</button></div>
-                        <div class="col-3"><button class="btn btn-primary w-100 calc-btn">*</button></div>
+                        <div id="prog-panel-left" class="d-none d-grid flex-shrink-0 order-2 order-md-1"
+                            style="grid-template-columns: repeat(2, 1fr); gap: 8px; width: 120px;">
+                            <button class="btn btn-light border w-100 calc-btn fw-bold">A</button>
+                            <button class="btn btn-light border w-100 calc-btn fw-bold">B</button>
+                            <button class="btn btn-light border w-100 calc-btn fw-bold">C</button>
+                            <button class="btn btn-light border w-100 calc-btn fw-bold">D</button>
+                            <button class="btn btn-light border w-100 calc-btn fw-bold">E</button>
+                            <button class="btn btn-light border w-100 calc-btn fw-bold">F</button>
+                        </div>
 
-                        <div class="col-3"><button class="btn btn-light border w-100 calc-btn">4</button></div>
-                        <div class="col-3"><button class="btn btn-light border w-100 calc-btn">5</button></div>
-                        <div class="col-3"><button class="btn btn-light border w-100 calc-btn">6</button></div>
-                        <div class="col-3"><button class="btn btn-primary w-100 calc-btn">-</button></div>
+                        <div class="flex-grow-1 order-1 order-md-2" style="min-width: 250px; max-width: 320px;">
+                            <div class="row g-2">
+                                <div class="col-3"><button class="btn btn-danger w-100 calc-btn fw-bold">C</button>
+                                </div>
+                                <div class="col-3"><button
+                                        class="btn btn-warning text-dark w-100 calc-btn fw-bold">CE</button></div>
+                                <div class="col-3"><button class="btn btn-secondary w-100 calc-btn fw-bold">%</button>
+                                </div>
+                                <div class="col-3"><button class="btn btn-primary w-100 calc-btn fw-bold">/</button>
+                                </div>
 
-                        <div class="col-3"><button class="btn btn-light border w-100 calc-btn">1</button></div>
-                        <div class="col-3"><button class="btn btn-light border w-100 calc-btn">2</button></div>
-                        <div class="col-3"><button class="btn btn-light border w-100 calc-btn">3</button></div>
-                        <div class="col-3"><button class="btn btn-primary w-100 calc-btn">+</button></div>
+                                <div class="col-3"><button
+                                        class="btn btn-light border w-100 calc-btn fw-bold">7</button></div>
+                                <div class="col-3"><button
+                                        class="btn btn-light border w-100 calc-btn fw-bold">8</button></div>
+                                <div class="col-3"><button
+                                        class="btn btn-light border w-100 calc-btn fw-bold">9</button></div>
+                                <div class="col-3"><button class="btn btn-primary w-100 calc-btn fw-bold">*</button>
+                                </div>
 
-                        <div class="col-6"><button class="btn btn-light border w-100 calc-btn">0</button></div>
-                        <div class="col-3"><button class="btn btn-light border w-100 calc-btn">.</button></div>
-                        <div class="col-3"><button class="btn btn-success w-100 calc-btn">=</button></div>
+                                <div class="col-3"><button
+                                        class="btn btn-light border w-100 calc-btn fw-bold">4</button></div>
+                                <div class="col-3"><button
+                                        class="btn btn-light border w-100 calc-btn fw-bold">5</button></div>
+                                <div class="col-3"><button
+                                        class="btn btn-light border w-100 calc-btn fw-bold">6</button></div>
+                                <div class="col-3"><button class="btn btn-primary w-100 calc-btn fw-bold">-</button>
+                                </div>
+
+                                <div class="col-3"><button
+                                        class="btn btn-light border w-100 calc-btn fw-bold">1</button></div>
+                                <div class="col-3"><button
+                                        class="btn btn-light border w-100 calc-btn fw-bold">2</button></div>
+                                <div class="col-3"><button
+                                        class="btn btn-light border w-100 calc-btn fw-bold">3</button></div>
+                                <div class="col-3"><button class="btn btn-primary w-100 calc-btn fw-bold">+</button>
+                                </div>
+
+                                <div class="col-6"><button
+                                        class="btn btn-light border w-100 calc-btn fw-bold">0</button></div>
+                                <div class="col-3"><button
+                                        class="btn btn-light border w-100 calc-btn fw-bold">.</button></div>
+                                <div class="col-3"><button class="btn btn-success w-100 calc-btn fw-bold">=</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="prog-panel-right" class="d-none d-grid flex-shrink-0 order-3 order-md-3"
+                            style="grid-template-columns: repeat(2, 1fr); gap: 8px; width: 120px;">
+                            <button class="btn btn-outline-primary w-100 calc-btn fw-bold">AND</button>
+                            <button class="btn btn-outline-primary w-100 calc-btn fw-bold">OR</button>
+                            <button class="btn btn-outline-primary w-100 calc-btn fw-bold">XOR</button>
+                            <button class="btn btn-outline-primary w-100 calc-btn fw-bold">NOT</button>
+                            <button class="btn btn-outline-primary w-100 calc-btn fw-bold">&lt;&lt;</button>
+                            <button class="btn btn-outline-primary w-100 calc-btn fw-bold">&gt;&gt;</button>
+                        </div>
+
                     </div>
                 </div>
             </div>
+
         </div>
     </main>
 
@@ -106,6 +163,8 @@
     </footer>
 
     <script src="lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="js/calculator.js"></script>
+    <script type="module" src="js/navbar.js"></script>
 </body>
 
 </html>
